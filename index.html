@@ -385,7 +385,7 @@
     <footer>
         <div class="container">
             <div>
-                <p>Copyright © Your Website 2023</p>
+                <p>Copyright &copy; Your Website <span id="year"></span></p>
             </div>
 
             <div class="socials">
@@ -414,5 +414,9 @@
     </footer>
 
 <!-- / FOOTER -->
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
