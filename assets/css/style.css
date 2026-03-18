@@ -441,6 +441,9 @@ header>div a:hover {
 
 .tl-image:last-child {
     background-color: var(--yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .tl-image:last-child h4 {
@@ -448,8 +451,8 @@ header>div a:hover {
     color: var(--white);
     text-align: center;
     line-height: 27px;
-    padding-top: 35px;
     font-weight: 900;
+    margin: 0;
 }
 
 .timeline h4 {
@@ -520,7 +523,7 @@ header>div a:hover {
     .tl-image:last-child h4 {
         font-size: 14px;
         line-height: normal;
-        padding-top: 15px;
+        margin: 0;
     }
     .timeline h4 {
         font-size: 20px;
