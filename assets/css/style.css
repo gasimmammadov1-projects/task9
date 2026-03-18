@@ -397,7 +397,7 @@ header>div a:hover {
 }
 
 .timeline {
-    width: 90%;
+    width: 100%;
     position: relative;
     margin: 0 auto;
 }
@@ -405,10 +405,12 @@ header>div a:hover {
 .timeline::before {
     content: "";
     position: absolute;
-    width: 2px;
-    height: 99%;
-    background-color: var(--lightest-grey);
+    top: 0;
+    bottom: 0;
     left: 50%;
+    width: 2px;
+    background-color: var(--lightest-grey);
+    transform: translateX(-50%);
     z-index: -1;
 }
 
@@ -417,7 +419,6 @@ header>div a:hover {
     padding-bottom: 110px;
     display: flex;
     position: relative;
-    justify-content: center;
 }
 
 .tl-image {
@@ -464,18 +465,25 @@ header>div a:hover {
 
 .tl-panel {
     line-height: 29px;
-    width: 40%;
-    padding: 0 40px;
+    width: 50%;
 }
 
 .left {
-    text-align: right;
     justify-content: flex-start;
 }
 
+.left .tl-panel {
+    text-align: right;
+    padding: 0 120px 0 20px;
+}
+
 .right {
-    text-align: left;
     justify-content: flex-end;
+}
+
+.right .tl-panel {
+    text-align: left;
+    padding: 0 20px 0 120px;
 }
 
 @media (max-width: 992px) {
@@ -483,22 +491,16 @@ header>div a:hover {
         display: none;
     }
     .timeline>div {
-        width: 100%;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         padding-bottom: 50px;
     }
-    .left {
-        text-align: center;
+    .timeline>div.left {
         flex-direction: column-reverse;
     }
-    .right {
-        text-align: center;
-    }
-    .tl-panel {
-        width: 100%;
-        padding: 0 10px;
+    .timeline>div.right {
+        flex-direction: column;
     }
     .tl-image {
         position: relative;
@@ -509,6 +511,11 @@ header>div a:hover {
         margin-bottom: 20px;
         border-width: 4px;
         flex-shrink: 0;
+    }
+    .tl-panel, .left .tl-panel, .right .tl-panel {
+        width: 100%;
+        padding: 0 15px;
+        text-align: center;
     }
     .tl-image:last-child h4 {
         font-size: 14px;
