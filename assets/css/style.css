@@ -534,7 +534,9 @@ header>div a:hover {
 
 .employers {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
     text-align: center;
 }
 
@@ -610,8 +612,11 @@ header>div a:hover {
 
 #faang {
     display: flex;
-    justify-content: space-between;
-    padding: 60px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 60px 20px;
     margin: auto;
 }
 
@@ -637,8 +642,7 @@ header>div a:hover {
 
 @media (max-width:992px) {
     #faang {
-        gap: 50px;
-        margin-right: 25%;
+        gap: 30px;
     }
 }
 
@@ -652,7 +656,8 @@ header>div a:hover {
 
 #contact {
     width: 100%;
-    height: 650px;
+    min-height: 650px;
+    padding-bottom: 50px;
     background-image: url("https://startbootstrap.github.io/startbootstrap-agency/assets/img/map-image.png");
     background-color: var(--dark-grey);
     background-position: center center;
@@ -700,18 +705,19 @@ form ::placeholder {
     background-color: var(--yellow);
     color: var(--white);
     border-radius: 5px;
-    margin-top: 40px;
     padding: 13px;
     width: 250px;
     height: 70px;
-    margin-left: 40%;
+    display: block;
+    margin: 40px auto;
     font-size: 20px;
     opacity: 0.6;
 }
 
 @media (max-width:768px) {
     form {
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
 
     form div {
