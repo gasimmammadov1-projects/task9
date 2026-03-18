@@ -230,9 +230,8 @@ header>div a:hover {
     background-color: var(--yellow);
     height: 125px;
     width: 125px;
-    margin-left: 28%;
+    margin: 0 auto 15px auto;
     border-radius: 50%;
-    margin-bottom: 15px;
     position: relative;
 }
 
@@ -399,7 +398,6 @@ header>div a:hover {
 
 .timeline {
     width: 90%;
-    height: 1400px;
     position: relative;
     margin: 0 auto;
 }
@@ -415,10 +413,11 @@ header>div a:hover {
 }
 
 .timeline>div {
-    width: 70%;
+    width: 100%;
     padding-bottom: 110px;
     display: flex;
-    gap: 25px;
+    position: relative;
+    justify-content: center;
 }
 
 .tl-image {
@@ -427,6 +426,10 @@ header>div a:hover {
     border: 7px solid var(--lightest-grey);
     border-radius: 50%;
     overflow: hidden;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
 }
 
 .tl-image img {
@@ -461,44 +464,49 @@ header>div a:hover {
 
 .tl-panel {
     line-height: 29px;
-    width: 60%;
-    padding: 0 20px;
+    width: 40%;
+    padding: 0 40px;
 }
 
 .left {
     text-align: right;
-    margin-right: 10%;
-    padding-right: 27px ;
+    justify-content: flex-start;
 }
 
 .right {
-    margin-left: 42.55%;
+    text-align: left;
+    justify-content: flex-end;
 }
 
 @media (max-width: 992px) {
     .timeline::before {
-        left: 10%;
+        display: none;
     }
     .timeline>div {
         width: 100%;
-        flex-direction: row-reverse;
-        justify-content: flex-end;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 50px;
     }
     .left {
-        text-align: left;
-        margin-right: 0;
-        padding-right: 0;
+        text-align: center;
+        flex-direction: column-reverse;
     }
     .right {
-        margin-left: 0;
+        text-align: center;
     }
     .tl-panel {
-        width: 75%;
+        width: 100%;
         padding: 0 10px;
     }
     .tl-image {
-        width: 100px;
-        height: 100px;
+        position: relative;
+        left: 0;
+        transform: none;
+        width: 130px;
+        height: 130px;
+        margin-bottom: 20px;
         border-width: 4px;
         flex-shrink: 0;
     }
@@ -535,7 +543,7 @@ header>div a:hover {
 .employers {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 80px;
     flex-wrap: wrap;
     text-align: center;
 }
@@ -615,7 +623,7 @@ header>div a:hover {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 80px;
     padding: 60px 20px;
     margin: auto;
 }
@@ -642,7 +650,8 @@ header>div a:hover {
 
 @media (max-width:992px) {
     #faang {
-        gap: 30px;
+        gap: 60px;
+        flex-direction: column;
     }
 }
 
